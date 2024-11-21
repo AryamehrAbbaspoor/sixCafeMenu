@@ -1,0 +1,87 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #fff;
+    color: #5c4033; /* Brown color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Menu Container */
+.menu-container {
+    width: 90%;
+    max-width: 800px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Header */
+header h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    position: relative;
+    color: #5c4033;
+}
+
+/* Background "6" Element */
+.menu-container::before {
+    content: '6';
+    font-size: 10rem;
+    color: rgba(92, 64, 51, 0.05);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    font-weight: bold;
+}
+
+/* Section Styling */
+.menu-section {
+    margin-bottom: 30px;
+    z-index: 1;
+    position: relative;
+}
+
+.menu-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #5c4033;
+    border-bottom: 2px solid #5c4033;
+    display: inline-block;
+}
+
+/* Menu Items */
+.menu-section ul {
+    list-style: none;
+}
+
+.menu-section li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1.1rem;
+}
+
+.menu-section li span {
+    font-weight: bold;
+    color: #5c4033;
+}
