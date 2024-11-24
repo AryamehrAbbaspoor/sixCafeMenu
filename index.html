@@ -3,49 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SicStreet Cafe Menu</title>
+    <title>Sixth Street Cafe Menu</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="background"></div>
     <div class="menu-container">
         <header>
-            <h1>SixStreet</h1>
+            <center>
+                <h1>
+                    <span class="six">Six</span><sup class="th">th</sup><span class="street">Street</span>
+                </h1>
+            </center>
         </header>
-        <main>
-            <section class="menu-section">
-                <h2>Coffee-Based Drinks</h2>
-                <ul>
-                    <li>Espresso<span>$3.00</span></li>
-                    <li>Cappuccino<span>$4.00</span></li>
-                    <li>Latte<span>$4.50</span></li>
-                    <li>Mocha<span>$5.00</span></li>
-                    <li>Flat White<span>$4.50</span></li>
-                    <li>Macchiato<span>$3.50</span></li>
-                </ul>
-            </section>
-            <section class="menu-section">
-                <h2>Cold Drinks</h2>
-                <ul>
-                    <li>Iced Coffee<span>$4.00</span></li>
-                    <li>Cold Brew<span>$4.50</span></li>
-                    <li>Iced Latte<span>$4.50</span></li>
-                    <li>Iced Tea (Lemon / Peach)<span>$3.50</span></li>
-                    <li>Sparkling Lemonade<span>$3.00</span></li>
-                    <li>Iced Matcha<span>$4.50</span></li>
-                </ul>
-            </section>
-            <section class="menu-section">
-                <h2>Cakes</h2>
-                <ul>
-                    <li>Chocolate Fudge Cake<span>$5.50</span></li>
-                    <li>Red Velvet<span>$5.00</span></li>
-                    <li>Cheesecake<span>$5.00</span></li>
-                    <li>Carrot Cake<span>$4.50</span></li>
-                    <li>Tiramisu<span>$5.50</span></li>
-                    <li>Lemon Drizzle<span>$4.50</span></li>
-                </ul>
-            </section>
-        </main>
+
+        <!-- Coffee-Based Hot Drinks -->
+        <div class="menu-section">
+            <h2>Coffee-Based Hot Drinks</h2>
+            <p class="farsi">نوشیدنی‌های گرم قهوه‌ای</p>
+            <ul>
+                <li>
+                    Espresso
+                    <div class="farsi">اسپرسو</div>
+                    <div class="price-options">
+                        <span>50-50: $2.50</span>
+                        <span>70% Robusta: $3.00</span>
+                        <span>100% Arabica: $3.50</span>
+                    </div>
+                </li>
+                <li>
+                    Latte
+                    <div class="farsi">لاته</div>
+                    <div class="price-options">
+                        <span>50-50: $3.00</span>
+                        <span>70% Robusta: $3.50</span>
+                        <span>100% Arabica: $4.00</span>
+                    </div>
+                </li>
+                <li>
+                    Cappuccino
+                    <div class="farsi">کاپوچینو</div>
+                    <div class="price-options">
+                        <span>50-50: $3.00</span>
+                        <span>70% Robusta: $3.50</span>
+                        <span>100% Arabica: $4.00</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Coffee-Based Cold Drinks -->
+        <div class="menu-section">
+            <h2>Coffee-Based Cold Drinks</h2>
+            <p class="farsi">نوشیدنی‌های سرد قهوه‌ای</p>
+            <ul>
+                <li>
+                    Iced Latte
+                    <div class="farsi">آیس لاته</div>
+                    <div class="price-options">
+                        <span>50-50: $3.50</span>
+                        <span>70% Robusta: $4.00</span>
+                        <span>100% Arabica: $4.50</span>
+                    </div>
+                </li>
+                <li>
+                    Iced Americano
+                    <div class="farsi">آیس آمریکانو</div>
+                    <div class="price-options">
+                        <span>50-50: $2.50</span>
+                        <span>70% Robusta: $3.00</span>
+                        <span>100% Arabica: $3.50</span>
+                    </div>
+                </li>
+                <li>
+                    Cold Brew
+                    <div class="farsi">کولد برو</div>
+                    <div class="price-options">
+                        <span>50-50: $4.00</span>
+                        <span>70% Robusta: $4.50</span>
+                        <span>100% Arabica: $5.00</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Hot Drinks -->
+        <div class="menu-section">
+            <h2>Hot Drinks</h2>
+            <p class="farsi">نوشیدنی‌های گرم</p>
+            <ul>
+                <li>Tea <div class="farsi">چای</div></li>
+                <li>Hot Chocolate <div class="farsi">هات چاکلت</div></li>
+            </ul>
+        </div>
+
+        <!-- Cold Drinks -->
+        <div class="menu-section">
+            <h2>Cold Drinks</h2>
+            <p class="farsi">نوشیدنی‌های سرد</p>
+            <ul>
+                <li>Smoothie <div class="farsi">اسموتی</div></li>
+                <li>Lemonade <div class="farsi">لیموناد</div></li>
+            </ul>
+        </div>
+
+        <!-- Herbal Tea -->
+        <div class="menu-section">
+            <h2>Herbal Tea</h2>
+            <p class="farsi">دمنوش</p>
+            <ul>
+                <li>Mint Tea <div class="farsi">چای نعناع</div></li>
+                <li>Chamomile Tea <div class="farsi">چای بابونه</div></li>
+            </ul>
+        </div>
+
+        <!-- Bakery -->
+        <div class="menu-section">
+            <h2>Bakery</h2>
+            <p class="farsi">نانوایی</p>
+            <ul>
+                <li>Croissant <span class="price">65</span>                   
+                    <p class="farsi">کرواسان</p>
+                </li>
+                <li>Chocolate Cake <div class="farsi">کیک شکلاتی</div></li>
+            </ul>
+        </div>
+
+        <!-- Extras -->
+        <div class="menu-section">
+            <h2>Extras</h2>
+            <p class="farsi">افزودنی‌ها</p>
+            <ul>
+                <li>Whipped Cream <div class="farsi">خامه زده شده</div></li>
+                <li>Syrup <div class="farsi">سیروپ</div></li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>
