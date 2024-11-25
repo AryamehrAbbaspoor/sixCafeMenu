@@ -1,73 +1,86 @@
-/* General Reset */
+/* General Reset: Removes default margins and paddings and ensures consistent box sizing across all elements */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Import Google Font */
+/* Body Styling: Sets font, background, and layout for the main page */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #eee7db;
-    color: black; /* Text is black */
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: 'Arial', sans-serif; /* Sets the default font for the page */
+    background-color: #eee7db; /* Sets a light brown color to resemble old paper */
+    color: black; /* Default text color */
+    height: 100vh; /* Ensures the body takes up the full height of the viewport */
+    overflow: hidden; /* Prevents scrolling on the body */
+    display: flex; /* Centers the content vertically and horizontally */
+    justify-content: center; /* Horizontally centers the content */
+    align-items: center; /* Vertically centers the content */
+    position: relative; /* Needed for positioning pseudo-elements like ::after */
 }
 
-/* Static Background Styling */
+/* Body Background Effect: Adds a subtle noise texture on top of the background */
+body::after {
+    content: ''; /* Adds an empty pseudo-element */
+    position: absolute; /* Stretches the pseudo-element over the entire body */
+    top: 0;
+    left: 0;
+    width: 100%; /* Covers the full width of the viewport */
+    height: 100%; /* Covers the full height of the viewport */
+    background-image: url('noise.png.jpg'); /* Applies a noise texture image */
+    opacity: 0.5; /* Makes the noise semi-transparent */
+    pointer-events: none; /* Ensures this element doesn't interfere with user interaction */
+    z-index: -2; /* Places this behind all other elements */
+}
+
+/* Static Background Styling: Configures the logo in the background */
 .background {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 300px; /* Make sure this is not 0 */
-    height: 300px; /* Make sure this is not 0 */
-    background-image: url('background.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    opacity: 0.2;
-    transform: translate(-50%, -50%);
-    z-index: 1;
+    position: fixed; /* Keeps the logo in a fixed position while scrolling */
+    top: 50%; /* Centers the logo vertically */
+    left: 50%; /* Centers the logo horizontally */
+    width: 300px; /* Sets a fixed width for the logo */
+    height: 300px; /* Sets a fixed height for the logo */
+    background-image: url('background.svg'); /* Adds the SVG logo */
+    background-repeat: no-repeat; /* Prevents the logo from repeating */
+    background-size: contain; /* Ensures the logo fits within its container */
+    opacity: 0.2; /* Makes the logo faint */
+    transform: translate(-50%, -50%); /* Precisely centers the logo */
+    z-index: 1; /* Places the logo above the background but below the menu */
+    pointer-events: none; /* Ensures the logo doesn't block interaction with the menu */
 }
 
-/* Menu Container */
+/* Menu Container: Defines the styling for the menu box */
 .menu-container {
-    width: 90%;
-    max-width: 800px;
-    background-color: #eee7db;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 8px;
-    position: relative;
-    z-index: 0;
-    overflow-y: auto;
-    max-height: 80vh;
+    width: 90%; /* Makes the menu box take 90% of the viewport width */
+    max-width: 800px; /* Caps the maximum width to ensure it doesn't stretch too wide */
+    background-color: #eee7db; /* Matches the old-paper theme */
+    border: 1px solid #e0e0e0; /* Adds a light border for definition */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+    padding: 20px; /* Adds spacing inside the menu */
+    border-radius: 8px; /* Rounds the corners of the menu box */
+    overflow-y: auto; /* Allows vertical scrolling for menu content */
+    max-height: 80vh; /* Limits the height to avoid overflow beyond the viewport */
+    z-index: 0; /* Places the menu box behind the background */
 }
 
-/* Apply Dancing Script to Headers */
-header h1, .menu-section h2 {
-    font-family: 'Dancing Script', cursive;
+/* Scrollbar Styling: Customizes the appearance of the scrollbar */
+/* .menu-container::-webkit-scrollbar {
+    width: 8px; /* Sets the width of the scrollbar 
 }
+.menu-container::-webkit-scrollbar-thumb {
+    background-color: #888; /* Sets the color of the scrollbar thumb 
+    border-radius: 4px; /* Rounds the edges of the scrollbar thumb 
+}
+.menu-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Changes the color on hover for better visibility 
+} */
 
-/* Header Styling */
+/* Header Styling: Configures the cafe name at the top */
 header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    margin-bottom: 30px;
+    display: flex; /* Aligns child elements horizontally */
+    justify-content: center; /* Centers the header content horizontally */
+    align-items: center; /* Aligns header content vertically */
+    margin-bottom: 30px; /* Adds space below the header */
 }
-
-header h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    color: black;
-    margin: 0;
-}
-
 header sup.th {
     font-size: 1rem;
     vertical-align: top;
@@ -89,111 +102,75 @@ header .street {
     margin-left: -5px;
 }
 
-/* Section Styling */
+header h1 {
+    font-family: 'Dancing Script', cursive; /* Applies a handwritten-like font */
+    font-size: 3rem; /* Sets a large font size for prominence */
+    font-weight: bold; /* Makes the text bold */
+    color: black; /* Sets the text color */
+}
+
+/* Section Styling: Defines each category of the menu */
 .menu-section {
-    margin-bottom: 30px;
+    margin-bottom: 30px; /* Adds space between menu sections */
 }
-
 .menu-section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 5px;
-    color: black;
-    border-bottom: 2px solid black;
-    text-transform: uppercase;
+    font-family: 'Dancing Script', cursive; /* Matches the handwritten font of the header */
+    font-size: 1.8rem; /* Sets a slightly smaller font for section titles */
+    margin-bottom: 5px; /* Adds spacing below the section title */
+    color: black; /* Sets the title color */
+    border-bottom: 2px solid black; /* Adds an underline for separation */
+    text-transform: uppercase; /* Makes the title text uppercase */
 }
-
 .menu-section .farsi {
-    font-size: 0.9rem;
-    color: black;
-    opacity: 0.6;
-    margin-top: 5px;
+    font-size: 0.9rem; /* Sets a smaller font for Farsi text */
+    opacity: 0.6; /* Makes the Farsi text less prominent */
+    margin-top: 5px; /* Adds space above the Farsi text */
 }
 
-/* Menu Items */
+/* Menu Items: Styles each individual menu item */
 .menu-section ul {
-    list-style: none;
+    list-style: none; /* Removes default bullet points */
 }
-
 .menu-section li {
-    padding: 10px 0;
-    border-bottom: 1px solid #e0e0e0;
-    font-size: 1.1rem;
+    display: flex; /* Aligns item text and price horizontally */
+    justify-content: space-between; /* Pushes the item name left and price right */
+    align-items: flex-start; /* Aligns items to the top */
+    padding: 10px 0; /* Adds vertical padding between items */
+    border-bottom: 1px solid #e0e0e0; /* Adds a separator line between items */
+    font-size: 1.1rem; /* Sets the font size for menu items */
+    flex-wrap: wrap; /* Allows wrapping for long text or small screens */
 }
 
+/* Farsi Text: Additional styling for Farsi translations */
 .menu-section li .farsi {
-    font-size: 0.8rem;
-    color: black;
-    opacity: 0.6;
-    margin-top: 2px;
-    width: 100%; /* Ensures Farsi text takes up the full width */
-    text-align: left; /* Align Farsi text to the left */
+    font-size: 0.8rem; /* Smaller font size for translations */
+    opacity: 0.6; /* Makes it less prominent than the main item text */
+    margin-top: 2px; /* Adds space above translations */
+    width: 100%; /* Ensures it spans the full width */
 }
 
-/* Pricing Options */
+/* Pricing Options: Aligns menu options and prices in a flexible layout */
 .price-options {
-    display: flex;
-    flex-direction: column;
-    font-size: 1rem;
-    margin-top: 5px;
-    color: black;
+    display: flex; /* Enables flexible layout */
+    flex-direction: column; /* Stacks options vertically */
+    margin-top: 5px; /* Adds spacing above price options */
+    width: 100%; /* Ensures it spans the full width of the container */
 }
-
 .price-options span {
-    margin-bottom: 5px;
-    font-weight: bold;
-    text-align: start;
+    display: flex; /* Aligns option text and price horizontally */
+    justify-content: space-between; /* Pushes text to the left and price to the right */
+    align-items: center; /* Vertically aligns content */
+    font-size: 1rem; /* Sets a consistent font size */
+    margin-bottom: 5px; /* Adds space between options */
+    white-space: nowrap; /* Prevents wrapping of text */
 }
-
-/* Scrollable Menu */
-.menu-container {
-    overflow-y: auto;
-    max-height: 80vh;
+.price-options span .option {
+    flex: 1; /* Allows the option to take up available space */
+    text-align: left; /* Aligns text to the left */
 }
-
-/* Smooth Scrolling */
-.menu-container::-webkit-scrollbar {
-    width: 8px;
-}
-
-/* .menu-container::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 4px;
-} */
-
-.menu-container::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
-}
-
-.menu-section li {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start; /* Align items at the top */
-    padding: 10px 0;
-    border-bottom: 1px solid #e0e0e0;
-    font-size: 1.1rem;
-    flex-wrap: wrap; /* Allows content to break into multiple lines */
-    position: relative;
-}
-
-.menu-section li .price {
-    font-size: 1rem;
-    font-weight: bold;
-    color: black;
-    margin-right: 5%;
-    margin-left: auto; /* Pushes the price to the right */
-    align-self: center; /* Align price vertically in the middle */
-}
-
-body::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    pointer-events: none;
-    z-index: -1;
-    background-image: url('noise.png.jpg'); /* Use a subtle noise texture */
-    opacity: 0.5;
+.price-options span .price {
+    flex-shrink: 0; /* Prevents the price from shrinking */
+    font-weight: bold; /* Makes the price stand out */
+    text-align: right; /* Aligns the price to the right */
+    font-family: 'Dancing Script', cursive; /* Matches the handwritten font for prices */
 }
